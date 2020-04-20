@@ -1,0 +1,30 @@
+[plugins/power]
+idle-dim=false
+sleep-inactive-ac-timeout=900
+sleep-inactive-ac-type='nothing'
+
+[plugins/color]
+night-light-enabled=true
+
+[plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+volume-down='<Primary><Shift>Page_Down'
+volume-mute='<Primary><Shift>Delete'
+volume-up='<Primary><Shift>Page_Up'
+
+[plugins/media-keys/custom-keybindings/custom1]
+binding='<Super>s'
+command='bash -c "gnome-screensaver-command -l && systemctl suspend"'
+name='Suspend'
+
+[plugins/media-keys/custom-keybindings/custom0]
+binding='<Primary><Alt>l'
+command='bash -c "if [[ $(gsettings get org.gnome.settings-daemon.plugins.color night-light-enabled) == "true" ]]; then gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled false; else gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true; fi"'
+name='Nightlight'
+
+[plugins/xsettings]
+overrides={'Gtk/ShellShowsAppMenu': <1>}
+hinting='slight'
+
+[peripherals/keyboard]
+numlock-state='on'
