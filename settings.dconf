@@ -18,7 +18,7 @@ command='gnome-session-quit --power-off'
 name='Power off'
 
 [plugins/media-keys/custom-keybindings/custom1]
-binding='<Super>s'
+binding='<Primary><Alt>s'
 command='bash -c "gnome-screensaver-command -l && systemctl suspend"'
 name='Suspend'
 
