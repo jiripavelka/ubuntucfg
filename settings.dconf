@@ -1,35 +1,182 @@
-[plugins/power]
+[org/gnome/settings-daemon/plugins/power]
 idle-dim=false
 sleep-inactive-ac-timeout=900
 sleep-inactive-ac-type='nothing'
 
-[plugins/color]
+[org/gnome/settings-daemon/plugins/color]
 night-light-enabled=true
 
-[plugins/media-keys]
+[org/gnome/settings-daemon/plugins/media-keys]
 custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
 volume-down='<Primary><Shift>Page_Down'
 volume-mute='<Primary><Shift>Delete'
 volume-up='<Primary><Shift>Page_Up'
 
-[plugins/media-keys/custom-keybindings/custom2]
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Primary><Alt>End'
 command='gnome-session-quit --power-off'
 name='Power off'
 
-[plugins/media-keys/custom-keybindings/custom1]
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Primary><Alt>s'
 command='bash -c "gnome-screensaver-command -l && systemctl suspend"'
 name='Suspend'
 
-[plugins/media-keys/custom-keybindings/custom0]
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
 binding='<Primary><Alt>l'
 command='bash -c "if [[ $(gsettings get org.gnome.settings-daemon.plugins.color night-light-enabled) == "true" ]]; then gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled false; else gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true; fi"'
 name='Nightlight'
 
-[plugins/xsettings]
+[org/gnome/settings-daemon/plugins/xsettings]
 overrides={'Gtk/ShellShowsAppMenu': <1>}
 hinting='slight'
 
-[peripherals/keyboard]
+[org/gnome/settings-daemon/peripherals/keyboard]
 numlock-state='on'
+
+[org/gnome/shell]
+command-history=['r']
+enabled-extensions=['disable-screenshield@lgpasquale.com', 'dash-to-panel@jderose9.github.com', 'clock-override@gnomeshell.kryogenix.org']
+favorite-apps=['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'chrome-hbongdcbkenobjmffhhmeadibfjiblhg-Default.desktop']
+
+[org/gnome/shell/extensions/clock_override]
+override-string='%A, %B %d, %Y  %;cf %H:%M'
+
+[org/gnome/shell/extensions/dash-to-panel]
+trans-use-custom-opacity=true
+leftbox-padding=-1
+dot-color-unfocused-1='#5294e2'
+animate-window-launch=false
+dot-color-unfocused-2='#5294e2'
+dot-color-unfocused-3='#5294e2'
+dot-color-unfocused-4='#5294e2'
+dot-size=5
+focus-highlight-color='#eeeeee'
+dot-style-focused='METRO'
+show-show-apps-button=false
+show-showdesktop-button=true
+animate-app-switch=false
+dot-color-1='#5294e2'
+dot-color-2='#5294e2'
+dot-color-3='#5294e2'
+dot-color-4='#5294e2'
+dot-style-unfocused='DOTS'
+hot-keys=true
+tray-padding=-1
+trans-use-custom-bg=false
+hotkeys-overlay-combo='TEMPORARILY'
+status-icon-padding=-1
+trans-panel-opacity=0.25
+trans-use-custom-gradient=true
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='icon-view'
+search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
+sidebar-width=196
+geometry='890x547+549+168'
+maximized=false
+
+[org/gnome/evolution-data-server]
+network-monitor-gio-name=''
+migrated=true
+
+[org/gnome/desktop/interface]
+gtk-im-module='gtk-im-context-simple'
+clock-show-seconds=false
+
+[org/gnome/desktop/notifications]
+application-children=['org-gnome-software', 'org-gnome-nautilus', 'google-chrome']
+show-banners=false
+show-in-lock-screen=false
+
+[org/gnome/desktop/notifications/application/google-chrome]
+application-id='google-chrome.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-software]
+application-id='org.gnome.Software.desktop'
+
+[org/gnome/desktop/app-folders]
+folder-children=['Utilities', 'Sundry', 'YaST']
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+translate=true
+categories=['X-GNOME-Utilities']
+apps=['org.gnome.baobab.desktop', 'deja-dup-preferences.desktop', 'eog.desktop', 'evince.desktop', 'org.gnome.FileRoller.desktop', 'gnome-calculator.desktop', 'gnome-dictionary.desktop', 'org.gnome.Characters.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.font-viewer.desktop', 'org.gnome.Terminal.desktop', 'org.gnome.Screenshot.desktop', 'gnome-system-log.desktop', 'gnome-system-monitor.desktop', 'gnome-tweak-tool.desktop', 'gucharmap.desktop', 'seahorse.desktop', 'vinagre.desktop', 'yelp.desktop']
+name='X-GNOME-Utilities.directory'
+
+[org/gnome/desktop/app-folders/folders/Sundry]
+translate=true
+categories=['X-GNOME-Sundry']
+apps=['alacarte.desktop', 'authconfig.desktop', 'ca.desrt.dconf-editor.desktop', 'fedora-release-notes.desktop', 'firewall-config.desktop', 'flash-player-properties.desktop', 'gconf-editor.desktop', 'gnome-abrt.desktop', 'gnome-power-statistics.desktop', 'ibus-setup-anthy.desktop', 'ibus-setup.desktop', 'ibus-setup-hangul.desktop', 'ibus-setup-libbopomofo.desktop', 'ibus-setup-libpinyin.desktop', 'ibus-setup-m17n.desktop', 'ibus-setup-typing-booster.desktop', 'im-chooser.desktop', 'itweb-settings.desktop', 'jhbuild.desktop', 'javaws.desktop', 'java-1.7.0-openjdk-jconsole.desktop', 'java-1.7.0-openjdk-policytool.desktop', 'log4j-chainsaw.desktop', 'log4j-logfactor5.desktop', 'nm-connection-editor.desktop', 'orca.desktop', 'setroubleshoot.desktop', 'system-config-date.desktop', 'system-config-firewall.desktop', 'system-config-keyboard.desktop', 'system-config-language.desktop', 'system-config-printer.desktop', 'system-config-users.desktop', 'vino-preferences.desktop']
+name='X-GNOME-Sundry.directory'
+
+[org/gnome/desktop/app-folders/folders/YaST]
+translate=true
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+
+[org/gnome/desktop/screensaver]
+lock-enabled=false
+
+[org/gnome/desktop/peripherals/keyboard]
+repeat-interval=uint32 25
+delay=uint32 270
+
+[org/gnome/desktop/search-providers]
+sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
+
+[org/gnome/desktop/session]
+idle-delay=uint32 900
+
+[org/gnome/desktop/wm/keybindings]
+switch-windows=['<Alt>Tab']
+switch-applications=@as []
+switch-applications-backward=@as []
+switch-windows-backward=['<Shift><Alt>Tab']
+
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'us'), ('xkb', 'cz')]
+mru-sources=[('xkb', 'cz'), ('xkb', 'us')]
+xkb-options=@as []
+
+[org/gnome/control-center]
+last-panel='ubuntu'
+
+[org/gnome/terminal/legacy/profiles:/:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+scrollbar-policy='never'
+
+[org/gnome/terminal/legacy]
+schema-version=uint32 3
+default-show-menubar=false
+
+[org/gnome/nm-applet/eap/7e276ba7-513c-45dd-8487-59352ab2aa7c]
+ignore-phase2-ca-cert=false
+ignore-ca-cert=false
+
+[org/gnome/software]
+check-timestamp=int64 1588241683
+
+[org/gtk/settings/file-chooser]
+sort-column='name'
+sidebar-width=196
+window-position=(0, 82)
+show-size-column=true
+show-hidden=false
+window-size=(1231, 902)
+sort-directories-first=true
+date-format='regular'
+sort-order='ascending'
+location-mode='path-bar'
+
+[apps/update-manager]
+first-run=false
+launch-time=int64 1587830239
+launch-count=11
+
+[com/ubuntu/update-notifier]
+release-check-time=uint32 1587829923

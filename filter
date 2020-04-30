@@ -1,0 +1,21 @@
+#!/bin/bash
+
+[[ -z "$1" ]] \
+  && echo "Missing file with dirs." >&2 \
+  && exit 2
+[[ ! -f "$1" ]] \
+  && echo "File $1 does not exist." >&2 \
+  && exit 1
+
+OUTPUT=false
+FILTER=$(tr "\n" "|" < "$1" | sed "s/|$//")
+
+while read l; do
+  [[ ${l:0:1} == "[" ]] \
+    && [[ "$l" =~ $FILTER ]] \
+    && OUTPUT=true
+  $OUTPUT \
+    && echo "$l"
+  [[ "$l" == "" ]] \
+    && OUTPUT=false
+done < /dev/stdin
