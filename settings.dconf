@@ -7,7 +7,7 @@ sleep-inactive-ac-type='nothing'
 night-light-enabled=true
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
 volume-down='<Primary><Shift>Page_Down'
 volume-mute='<Primary><Shift>Delete'
 volume-up='<Primary><Shift>Page_Up'
@@ -27,6 +27,11 @@ binding='<Primary><Alt>l'
 command='bash -c "if [[ $(gsettings get org.gnome.settings-daemon.plugins.color night-light-enabled) == "true" ]]; then gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled false; else gsettings set org.gnome.settings-daemon.plugins.color night-light-enabled true; fi"'
 name='Nightlight'
 
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
+binding='<Super>c'
+command='bash -c "wmctrl -a Calculator || gnome-calculator"'
+name='Calculator'
+
 [org/gnome/settings-daemon/plugins/xsettings]
 overrides={'Gtk/ShellShowsAppMenu': <1>}
 hinting='slight'
@@ -37,7 +42,7 @@ numlock-state='on'
 [org/gnome/shell]
 command-history=['r']
 enabled-extensions=['disable-screenshield@lgpasquale.com', 'dash-to-panel@jderose9.github.com', 'clock-override@gnomeshell.kryogenix.org']
-favorite-apps=['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'chrome-hbongdcbkenobjmffhhmeadibfjiblhg-Default.desktop', 'code_code.desktop']
+favorite-apps=['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'chrome-hbongdcbkenobjmffhhmeadibfjiblhg-Default.desktop', 'code_code.desktop', 'slack_slack.desktop']
 
 [org/gnome/shell/extensions/clock_override]
 override-string='%A, %B %d, %Y  %;cf %H:%M'
@@ -89,13 +94,29 @@ bottom-panel-size=140
 side-panel-size=200
 side-panel-active-page='GeditWindowDocumentsPanel'
 
+[org/gnome/calculator]
+target-currency=''
+show-zeroes=false
+source-currency=''
+show-thousands=false
+button-mode='basic'
+target-units='radian'
+word-size=64
+window-position=(1065, 556)
+number-format='automatic'
+angle-units='degrees'
+base=10
+source-units='degree'
+accuracy=9
+refresh-interval=604800
+
 [org/gnome/nautilus/preferences]
 default-folder-viewer='icon-view'
 search-filter-time-type='last_modified'
 
 [org/gnome/nautilus/window-state]
 sidebar-width=196
-geometry='890x541+708+330'
+geometry='890x533+889+361'
 maximized=false
 
 [org/gnome/evince/default]
@@ -110,15 +131,24 @@ gtk-im-module='gtk-im-context-simple'
 clock-show-seconds=false
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-software', 'org-gnome-nautilus', 'google-chrome', 'firefox']
+application-children=['org-gnome-software', 'org-gnome-nautilus', 'google-chrome', 'firefox', 'update-manager', 'gnome-network-panel', 'slack-slack']
 show-banners=false
 show-in-lock-screen=false
 
 [org/gnome/desktop/notifications/application/google-chrome]
 application-id='google-chrome.desktop'
 
+[org/gnome/desktop/notifications/application/slack-slack]
+application-id='slack_slack.desktop'
+
+[org/gnome/desktop/notifications/application/update-manager]
+application-id='update-manager.desktop'
+
 [org/gnome/desktop/notifications/application/firefox]
 application-id='firefox.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-network-panel]
+application-id='gnome-network-panel.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
@@ -150,8 +180,11 @@ name='suse-yast.directory'
 lock-enabled=false
 
 [org/gnome/desktop/peripherals/keyboard]
-repeat-interval=uint32 25
-delay=uint32 270
+repeat-interval=uint32 33
+delay=uint32 190
+
+[org/gnome/desktop/peripherals/mouse]
+speed=-0.54676258992805749
 
 [org/gnome/desktop/search-providers]
 sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
@@ -171,7 +204,7 @@ mru-sources=[('xkb', 'cz'), ('xkb', 'us')]
 xkb-options=@as []
 
 [org/gnome/control-center]
-last-panel='ubuntu'
+last-panel='keyboard'
 
 [org/gnome/eog/view]
 background-color='rgb(0,0,0)'
@@ -189,12 +222,12 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
 [org/gnome/software]
-check-timestamp=int64 1588331800
+check-timestamp=int64 1589886571
 
 [org/gtk/settings/file-chooser]
 sort-column='name'
 sidebar-width=196
-window-position=(344, 40)
+window-position=(689, 45)
 show-size-column=true
 show-hidden=false
 window-size=(1231, 902)
@@ -205,8 +238,8 @@ location-mode='path-bar'
 
 [apps/update-manager]
 first-run=false
-launch-time=int64 1587830239
-launch-count=11
+launch-time=int64 1589733816
+launch-count=14
 
 [com/ubuntu/update-notifier]
-release-check-time=uint32 1587829923
+release-check-time=uint32 1589039889
