@@ -14,12 +14,12 @@ volume-up='<Primary><Shift>Page_Up'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Primary><Alt>End'
-command='gnome-session-quit --power-off'
+command="bash -c \"gnome-session-quit --power-off || notify-send 'missing command gnome-session'\""
 name='Power off'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Primary><Alt>s'
-command='bash -c "gnome-screensaver-command -l && systemctl suspend"'
+command="bash -c \"gnome-screensaver-command -l && systemctl suspend || notify-send 'missing command gnome-screensaver or systemctl'\""
 name='Suspend'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
@@ -42,7 +42,7 @@ numlock-state='on'
 [org/gnome/shell]
 command-history=['r']
 enabled-extensions=['disable-screenshield@lgpasquale.com', 'dash-to-panel@jderose9.github.com', 'clock-override@gnomeshell.kryogenix.org']
-favorite-apps=['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'chrome-hbongdcbkenobjmffhhmeadibfjiblhg-Default.desktop', 'code_code.desktop', 'slack_slack.desktop']
+favorite-apps=['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'chrome-hbongdcbkenobjmffhhmeadibfjiblhg-Default.desktop', 'code_code.desktop', 'slack_slack.desktop', 'vlc_vlc.desktop']
 
 [org/gnome/shell/extensions/clock_override]
 override-string='%A, %B %d, %Y  %;cf %H:%M'
@@ -102,7 +102,7 @@ show-thousands=false
 button-mode='basic'
 target-units='radian'
 word-size=64
-window-position=(1065, 556)
+window-position=(778, 592)
 number-format='automatic'
 angle-units='degrees'
 base=10
@@ -111,16 +111,17 @@ accuracy=9
 refresh-interval=604800
 
 [org/gnome/nautilus/preferences]
+search-view='list-view'
 default-folder-viewer='icon-view'
 search-filter-time-type='last_modified'
 
 [org/gnome/nautilus/window-state]
 sidebar-width=196
-geometry='890x533+889+361'
+geometry='890x520+917+340'
 maximized=false
 
 [org/gnome/evince/default]
-window-ratio=(0.98039215686274506, 0.75757575757575757)
+window-ratio=(1.5686274509803921, 1.25)
 
 [org/gnome/evolution-data-server]
 network-monitor-gio-name=''
@@ -132,7 +133,7 @@ clock-show-seconds=false
 
 [org/gnome/desktop/notifications]
 application-children=['org-gnome-software', 'org-gnome-nautilus', 'google-chrome', 'firefox', 'update-manager', 'gnome-network-panel', 'slack-slack']
-show-banners=false
+show-banners=true
 show-in-lock-screen=false
 
 [org/gnome/desktop/notifications/application/google-chrome]
@@ -222,12 +223,12 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
 [org/gnome/software]
-check-timestamp=int64 1589886571
+check-timestamp=int64 1590498854
 
 [org/gtk/settings/file-chooser]
 sort-column='name'
 sidebar-width=196
-window-position=(689, 45)
+window-position=(36, 32)
 show-size-column=true
 show-hidden=false
 window-size=(1231, 902)
@@ -238,8 +239,8 @@ location-mode='path-bar'
 
 [apps/update-manager]
 first-run=false
-launch-time=int64 1589733816
-launch-count=14
+launch-time=int64 1590410028
+launch-count=15
 
 [com/ubuntu/update-notifier]
-release-check-time=uint32 1589039889
+release-check-time=uint32 1590335481
