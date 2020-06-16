@@ -14,12 +14,12 @@ volume-up='<Primary><Shift>Page_Up'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Primary><Alt>End'
-command="bash -c \"gnome-session-quit --power-off || notify-send 'missing command gnome-session'\""
+command='bash -c "gnome-session-quit --power-off || notify-send \"missing command gnome-session\""'
 name='Power off'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Primary><Alt>s'
-command="bash -c \"gnome-screensaver-command -l && systemctl suspend || notify-send 'missing command gnome-screensaver or systemctl'\""
+command='bash -c "gnome-screensaver-command -l && systemctl suspend || notify-send \"missing command gnome-screensaver or systemctl\"'
 name='Suspend'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
