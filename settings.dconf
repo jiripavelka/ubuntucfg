@@ -19,7 +19,7 @@ name='Power off'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Primary><Alt>s'
-command='bash -c "gnome-screensaver-command -l && systemctl suspend || notify-send \"missing command gnome-screensaver or systemctl\"'
+command='bash -c "gnome-screensaver-command -l && systemctl suspend || notify-send \"missing command gnome-screensaver or systemctl\""'
 name='Suspend'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
