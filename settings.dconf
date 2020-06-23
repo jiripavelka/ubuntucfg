@@ -14,12 +14,12 @@ volume-up='<Primary><Shift>Page_Up'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Primary><Alt>End'
-command='bash -c "gnome-session-quit --power-off || notify-send \"missing command gnome-session\""'
+command='bash -c "gnome-session-quit --power-off || notify-send \\"missing command gnome-session\\""'
 name='Power off'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Primary><Alt>s'
-command='bash -c "gnome-screensaver-command -l && systemctl suspend || notify-send \"missing command gnome-screensaver or systemctl\""'
+command='bash -c "gnome-screensaver-command -l && systemctl suspend || notify-send \\"missing command gnome-screensaver or systemctl\\""'
 name='Suspend'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
@@ -42,6 +42,7 @@ numlock-state='on'
 [org/gnome/shell]
 command-history=['r']
 enabled-extensions=['disable-screenshield@lgpasquale.com', 'dash-to-panel@jderose9.github.com', 'clock-override@gnomeshell.kryogenix.org']
+had-bluetooth-devices-setup=false
 favorite-apps=['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'chrome-hbongdcbkenobjmffhhmeadibfjiblhg-Default.desktop', 'code_code.desktop', 'slack_slack.desktop', 'vlc_vlc.desktop']
 
 [org/gnome/shell/extensions/clock_override]
@@ -69,12 +70,14 @@ dot-color-4='#5294e2'
 dot-style-unfocused='DOTS'
 hot-keys=true
 tray-padding=-1
+window-preview-title-font-color='#dddddd'
 trans-use-custom-bg=false
 hotkeys-overlay-combo='TEMPORARILY'
 status-icon-padding=-1
 taskbar-locked=true
 trans-panel-opacity=0.25
 trans-use-custom-gradient=true
+show-window-previews=false
 
 [org/gnome/gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -102,7 +105,7 @@ show-thousands=false
 button-mode='basic'
 target-units='radian'
 word-size=64
-window-position=(778, 592)
+window-position=(912, 590)
 number-format='automatic'
 angle-units='degrees'
 base=10
@@ -117,11 +120,23 @@ search-filter-time-type='last_modified'
 
 [org/gnome/nautilus/window-state]
 sidebar-width=196
-geometry='890x520+917+340'
+geometry='890x502+976+257'
 maximized=false
 
+[org/gnome/file-roller/listing]
+sort-method='name'
+name-column-width=250
+sort-type='ascending'
+list-mode='as-folder'
+show-path=false
+
+[org/gnome/file-roller/ui]
+sidebar-width=200
+window-height=480
+window-width=600
+
 [org/gnome/evince/default]
-window-ratio=(1.5686274509803921, 1.25)
+window-ratio=(1.5686274509803921, 1.1767676767676767)
 
 [org/gnome/evolution-data-server]
 network-monitor-gio-name=''
@@ -132,18 +147,18 @@ gtk-im-module='gtk-im-context-simple'
 clock-show-seconds=false
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-software', 'org-gnome-nautilus', 'google-chrome', 'firefox', 'update-manager', 'gnome-network-panel', 'slack-slack']
+application-children=['org-gnome-software', 'org-gnome-nautilus', 'google-chrome', 'firefox', 'update-manager', 'gnome-network-panel', 'slack-slack', 'org-gnome-tweaks']
 show-banners=true
 show-in-lock-screen=false
 
+[org/gnome/desktop/notifications/application/org-gnome-tweaks]
+application-id='org.gnome.tweaks.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
 [org/gnome/desktop/notifications/application/google-chrome]
 application-id='google-chrome.desktop'
-
-[org/gnome/desktop/notifications/application/slack-slack]
-application-id='slack_slack.desktop'
-
-[org/gnome/desktop/notifications/application/update-manager]
-application-id='update-manager.desktop'
 
 [org/gnome/desktop/notifications/application/firefox]
 application-id='firefox.desktop'
@@ -151,11 +166,14 @@ application-id='firefox.desktop'
 [org/gnome/desktop/notifications/application/gnome-network-panel]
 application-id='gnome-network-panel.desktop'
 
-[org/gnome/desktop/notifications/application/org-gnome-nautilus]
-application-id='org.gnome.Nautilus.desktop'
+[org/gnome/desktop/notifications/application/update-manager]
+application-id='update-manager.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-software]
 application-id='org.gnome.Software.desktop'
+
+[org/gnome/desktop/notifications/application/slack-slack]
+application-id='slack_slack.desktop'
 
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', 'Sundry', 'YaST']
@@ -199,10 +217,13 @@ switch-applications=@as []
 switch-applications-backward=@as []
 switch-windows-backward=['<Shift><Alt>Tab']
 
+[org/gnome/desktop/datetime]
+automatic-timezone=true
+
 [org/gnome/desktop/input-sources]
 sources=[('xkb', 'us'), ('xkb', 'cz')]
 mru-sources=[('xkb', 'cz'), ('xkb', 'us')]
-xkb-options=@as []
+xkb-options=['compose:rwin']
 
 [org/gnome/control-center]
 last-panel='keyboard'
@@ -223,24 +244,24 @@ ignore-phase2-ca-cert=false
 ignore-ca-cert=false
 
 [org/gnome/software]
-check-timestamp=int64 1590498854
+check-timestamp=int64 1592886803
 
 [org/gtk/settings/file-chooser]
-sort-column='name'
+sort-column='modified'
 sidebar-width=196
-window-position=(36, 32)
+window-position=(0, 45)
 show-size-column=true
 show-hidden=false
 window-size=(1231, 902)
 sort-directories-first=true
 date-format='regular'
-sort-order='ascending'
+sort-order='descending'
 location-mode='path-bar'
 
 [apps/update-manager]
 first-run=false
-launch-time=int64 1590410028
-launch-count=15
+launch-time=int64 1592203539
+launch-count=17
 
 [com/ubuntu/update-notifier]
-release-check-time=uint32 1590335481
+release-check-time=uint32 1592203535

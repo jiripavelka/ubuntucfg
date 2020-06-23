@@ -19,3 +19,7 @@ Simple way to backup complete Ubuntu config and restore only selected dirs. The 
    ```
    { ubuntucfg } » ./filter dirs < settings.dconf | dconf load /
    ```
+
+## Known bugs
+
+  * Dash-to-panel `win + number` shortcut must be re-enabled manually in DTP settings

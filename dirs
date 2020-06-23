@@ -1,5 +1,7 @@
 org/gnome/settings-daemon
 org/gnome/shell
 org/gnome/desktop/wm/keybindings
+org/gnome/desktop/datetime
 org/gnome/desktop/input-sources
 org/gnome/desktop/peripherals/keyboard
+org/gtk/settings/file-chooser
