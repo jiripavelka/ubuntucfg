@@ -72,7 +72,7 @@ automatic-timezone=true
 [org/gnome/desktop/input-sources]
 mru-sources=[('xkb', 'cz'), ('xkb', 'us')]
 sources=[('xkb', 'us'), ('xkb', 'cz')]
-xkb-options=['compose:rwin']
+xkb-options=['compose:rwin', 'compose:menu']
 
 [org/gnome/desktop/interface]
 clock-show-seconds=false
