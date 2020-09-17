@@ -37,7 +37,7 @@ window-position=(912, 590)
 word-size=64
 
 [org/gnome/control-center]
-last-panel='wifi'
+last-panel='keyboard'
 
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', 'Sundry', 'YaST']
@@ -246,7 +246,7 @@ night-light-enabled=true
 night-light-temperature=uint32 2700
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']
 volume-down=['<Primary><Shift>Page_Down']
 volume-mute=['<Primary><Shift>Delete']
 volume-up=['<Primary><Shift>Page_Up']
@@ -258,18 +258,23 @@ name='Nightlight'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
 binding='<Primary><Alt>s'
-command='bash -c "gnome-screensaver-command -l && systemctl suspend || notify-send \\"missing command gnome-screensaver or systemctl\\""'
+command='bash -c "gnome-screensaver-command -l && systemctl suspend || notify-send "missing command gnome-screensaver or systemctl""'
 name='Suspend'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
 binding='<Primary><Alt>End'
-command='bash -c "gnome-session-quit --power-off || notify-send \\"missing command gnome-session\\""'
+command='bash -c "gnome-session-quit --power-off || notify-send "missing command gnome-session""'
 name='Power off'
 
 [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
 binding='<Super>c'
 command='bash -c "wmctrl -a Calculator || gnome-calculator"'
 name='Calculator'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
+binding='<Primary><Alt>f'
+command='gnome-screensaver-command -a && xset dpms force off'
+name='screen off'
 
 [org/gnome/settings-daemon/plugins/power]
 idle-dim=false
@@ -360,5 +365,5 @@ sort-column='modified'
 sort-directories-first=true
 sort-order='descending'
 type-format='category'
-window-position=(2262, 584)
+window-position=(345, 584)
 window-size=(1231, 902)
