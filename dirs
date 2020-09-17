@@ -5,3 +5,6 @@ org/gnome/desktop/datetime
 org/gnome/desktop/input-sources
 org/gnome/desktop/peripherals/keyboard
 org/gtk/settings/file-chooser
+org/gnome/desktop/session
+org/gnome/mutter
+

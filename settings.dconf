@@ -37,7 +37,7 @@ window-position=(912, 590)
 word-size=64
 
 [org/gnome/control-center]
-last-panel='keyboard'
+last-panel='wifi'
 
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', 'Sundry', 'YaST']
@@ -82,7 +82,7 @@ gtk-theme='Yaru-dark'
 text-scaling-factor=1.25
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-software', 'org-gnome-nautilus', 'google-chrome', 'firefox', 'update-manager', 'gnome-network-panel', 'slack-slack', 'org-gnome-tweaks', 'gnome-control-center']
+application-children=['org-gnome-software', 'org-gnome-nautilus', 'google-chrome', 'firefox', 'update-manager', 'gnome-network-panel', 'slack-slack', 'org-gnome-tweaks', 'gnome-control-center', 'slack', 'ulauncher']
 show-banners=true
 show-in-lock-screen=false
 
@@ -172,11 +172,15 @@ background-color='rgb(0,0,0)'
 use-background-color=true
 
 [org/gnome/evince/default]
-window-ratio=(1.5686274509803921, 1.1767676767676767)
+window-ratio=(1.568172755692669, 1.1770714836818577)
 
 [org/gnome/evolution-data-server]
 migrated=true
 network-monitor-gio-name=''
+
+[org/gnome/file-roller/dialogs/extract]
+recreate-folders=true
+skip-newer=false
 
 [org/gnome/file-roller/listing]
 list-mode='as-folder'
@@ -191,12 +195,12 @@ window-height=480
 window-width=600
 
 [org/gnome/gedit/plugins]
-active-plugins=['spell', 'modelines', 'filebrowser', 'docinfo', 'time']
+active-plugins=['docinfo', 'filebrowser', 'modelines', 'spell', 'time']
 
 [org/gnome/gedit/plugins/filebrowser]
 root='file:///'
 tree-view=true
-virtual-root='file:///home/george/Downloads'
+virtual-root='file:///home/pavel/data/_clients/umiami/student-solutions'
 
 [org/gnome/gedit/preferences/ui]
 show-tabs-mode='auto'
@@ -226,7 +230,7 @@ search-view='list-view'
 
 [org/gnome/nautilus/window-state]
 geometry='890x502+976+257'
-initial-size=(1883, 1209)
+initial-size=(1920, 2071)
 maximized=false
 sidebar-width=196
 
@@ -279,7 +283,7 @@ overrides={'Gtk/ShellShowsAppMenu': <1>}
 [org/gnome/shell]
 command-history=['r']
 enabled-extensions=['disable-screenshield@lgpasquale.com', 'dash-to-panel@jderose9.github.com', 'clock-override@gnomeshell.kryogenix.org']
-favorite-apps=['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'slack.desktop', 'chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop', 'chrome-ejfamhciedlilnhljkpoeabchijipbfj-Default.desktop', 'virtualbox.desktop']
+favorite-apps=['google-chrome.desktop', 'org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop', 'code.desktop', 'slack.desktop', 'chrome-ejfamhciedlilnhljkpoeabchijipbfj-Default.desktop', 'chrome-jdklklfpinionkgpmghaghehojplfjio-Default.desktop', 'virtualbox.desktop']
 had-bluetooth-devices-setup=false
 
 [org/gnome/shell/extensions/clock_override]
@@ -356,5 +360,5 @@ sort-column='modified'
 sort-directories-first=true
 sort-order='descending'
 type-format='category'
-window-position=(2265, 584)
+window-position=(2262, 584)
 window-size=(1231, 902)
