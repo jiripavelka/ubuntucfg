@@ -1,7 +1,7 @@
 [apps/update-manager]
 first-run=false
-launch-count=18
-launch-time=int64 1600159049
+launch-count=19
+launch-time=int64 1600765042
 show-details=true
 window-height=400
 window-width=1008
@@ -82,7 +82,7 @@ gtk-theme='Yaru-dark'
 text-scaling-factor=1.25
 
 [org/gnome/desktop/notifications]
-application-children=['org-gnome-software', 'org-gnome-nautilus', 'google-chrome', 'firefox', 'update-manager', 'gnome-network-panel', 'slack-slack', 'org-gnome-tweaks', 'gnome-control-center', 'slack', 'ulauncher']
+application-children=['org-gnome-software', 'org-gnome-nautilus', 'google-chrome', 'firefox', 'update-manager', 'gnome-network-panel', 'slack-slack', 'org-gnome-tweaks', 'gnome-control-center', 'slack', 'ulauncher', 'org-gnome-screenshot', 'org-gnome-calculator']
 show-banners=true
 show-in-lock-screen=false
 
@@ -100,6 +100,9 @@ application-id='gnome-network-panel.desktop'
 
 [org/gnome/desktop/notifications/application/google-chrome]
 application-id='google-chrome.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-calculator]
+application-id='org.gnome.Calculator.desktop'
 
 [org/gnome/desktop/notifications/application/org-gnome-nautilus]
 application-id='org.gnome.Nautilus.desktop'
@@ -230,7 +233,7 @@ search-view='list-view'
 
 [org/gnome/nautilus/window-state]
 geometry='890x502+976+257'
-initial-size=(1920, 2071)
+initial-size=(1579, 1161)
 maximized=false
 sidebar-width=196
 
@@ -246,7 +249,7 @@ night-light-enabled=true
 night-light-temperature=uint32 2700
 
 [org/gnome/settings-daemon/plugins/media-keys]
-custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/']
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/']
 volume-down=['<Primary><Shift>Page_Down']
 volume-mute=['<Primary><Shift>Delete']
 volume-up=['<Primary><Shift>Page_Up']
@@ -275,6 +278,11 @@ name='Calculator'
 binding='<Primary><Alt>f'
 command='gnome-screensaver-command -a && xset dpms force off'
 name='screen off'
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
+binding='<Super>s'
+command='ulauncher-toggle && ulauncher-toggle && wmctrl -a "Ulauncher - Application Launcher"'
+name='ulauncher'
 
 [org/gnome/settings-daemon/plugins/power]
 idle-dim=false
@@ -335,6 +343,9 @@ window-preview-title-font-color='#dddddd'
 
 [org/gnome/shell/extensions/desktop-icons]
 show-home=false
+
+[org/gnome/shell/keybindings]
+toggle-overview=@as []
 
 [org/gnome/software]
 check-timestamp=int64 1592886803
