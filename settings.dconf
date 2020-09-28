@@ -39,6 +39,12 @@ word-size=64
 [org/gnome/control-center]
 last-panel='keyboard'
 
+[org/gnome/desktop/a11y]
+always-show-universal-access-status=false
+
+[org/gnome/desktop/a11y/keyboard]
+stickykeys-enable=false
+
 [org/gnome/desktop/app-folders]
 folder-children=['Utilities', 'Sundry', 'YaST']
 
@@ -72,7 +78,7 @@ automatic-timezone=true
 [org/gnome/desktop/input-sources]
 mru-sources=[('xkb', 'cz'), ('xkb', 'us')]
 sources=[('xkb', 'us'), ('xkb', 'cz')]
-xkb-options=['compose:rwin', 'compose:menu']
+xkb-options=['compose:paus', 'compose:menu']
 
 [org/gnome/desktop/interface]
 clock-show-seconds=false
@@ -309,6 +315,7 @@ preferred-monitor=0
 [org/gnome/shell/extensions/dash-to-panel]
 animate-app-switch=false
 animate-window-launch=false
+check-update=true
 dot-color-1='#5294e2'
 dot-color-2='#5294e2'
 dot-color-3='#5294e2'
@@ -322,13 +329,16 @@ dot-style-focused='METRO'
 dot-style-unfocused='DOTS'
 focus-highlight-color='#eeeeee'
 force-check-update=false
+group-apps=true
 hot-keys=true
 hotkeys-overlay-combo='TEMPORARILY'
 intellihide=false
 leftbox-padding=-1
+multi-monitors=false
 show-activities-button=false
 show-appmenu=true
 show-apps-icon-file=''
+show-favorites=true
 show-show-apps-button=true
 show-showdesktop-button=true
 show-window-previews=false
